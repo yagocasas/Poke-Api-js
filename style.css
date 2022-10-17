@@ -14,38 +14,35 @@ body {
     color: white;
   }
   .container {
-    
     padding: 100px;
     margin: 0 auto;
     background-image: url(./assets/background_pokecards.jpg);
     background-size: contain;
   }
 
-  h1 {
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 70px;
-    
+  .title {
+    display: flex;
+    justify-content: center;
   }
+
+  .poke_img {
+    height: 100px;
+    width: 350px;
+   
+  }
+ 
   .card {
     height: 250px;
     width: 170px;
     list-style: none;
     padding: 30px;
-    color: white;
+    color: rgb(217, 246, 246);
     text-align: center;
     border-radius: 60px;
     border: solid 2px #be5c5c;
     background-image: url(./assets/card_image.png);
   }
 
-   /* .card:before {
-    content:'';
-    width: 100%;
-    height: 100%;
-    background-image: url(./assets/card_image.png);
-    
-  }  */
 
   /* nueva clase imagen */
   .imagen {
@@ -68,11 +65,8 @@ body {
 
   .card-subtitle {
     font-weight: lighter;
-    color: #666;
+    color: rgb(242, 79, 10);
     margin-top: 5px;
-  }
-  .card-image {
-    height: 180px;
   }
 
   #pokedex {
@@ -82,7 +76,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
     padding: 30px;
-    border: solid 5px #be5c5c;
+    border: solid 5px white;
     border-radius: 50px;
     background-image: url(./assets/grass_background.png);
   }
@@ -91,16 +85,20 @@ body {
     animation: bounce 0.5s linear;
   }
 
-  .type {
-    padding: 4px 8px;
-    border-radius: 4px;
-    text-transform: capitalize;
-    display: inline-block;
-    color: whitesmoke;
+  .types-container {
+    display: flex;
+    justify-content: space-evenly;
+
   }
 
-  .type[pokemon-type='grass'] {
-background-color: green;
+  .type {
+    width: 70px;
+    padding: 4px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    display: inline-block;
+
+    color: whitesmoke;
   }
 
   @keyframes bounce {
