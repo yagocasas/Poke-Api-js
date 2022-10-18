@@ -1,5 +1,4 @@
 const pokedex$$ = document.querySelector("#pokedex");
-console.log(pokedex$$);
 const ALL_POKEMONS_INFO = [];
 
 const getAllPokemons = () =>
@@ -92,6 +91,8 @@ const renderPokemons = (pokemons) => {
   if (!pokemons.length) renderNoResults();
   pokemons.forEach((pokemon) => renderPokemonCard(pokemon));
 };
+
+
 
 const init = async () => {
   const allPokemons = await getAllPokemons();

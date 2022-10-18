@@ -1,26 +1,39 @@
 /* @font-face {
   font-family: 'Flexo';
   src: local('Flexo Demi'), local('Flexo-Demi'),
-      url('Flexo-Demi.woff2') format('woff2'),
-      url('Flexo-Demi.woff') format('woff'),
-      url('Flexo-Demi.ttf') format('truetype');
+  url('Flexo-Demi.woff2') format('woff2'),
+  url('Flexo-Demi.woff') format('woff'),
+  url('Flexo-Demi.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 } */
 
 body {
-    margin: 0;
-    font-family: rubik;
-    color: white;
-  }
-  .container {
-    padding: 100px;
-    margin: 0 auto;
-    background-image: url(./assets/background_pokecards.jpg);
-    background-size: contain;
-  }
+  margin: 0;
+  font-family: rubik;
+  color: white;
+}
+.container {
+  padding: 100px;
+  margin: 0 auto;
+  background-image: url(./assets/background_pokecards.jpg);
+  background-size: contain;
+}
 
-  .title {
+header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+}
+
+.search_input {
+  border-radius: 10px;
+  width: 30vh;
+  padding: 8px;
+
+}
+
+.title {
     display: flex;
     justify-content: center;
   }
@@ -38,17 +51,34 @@ body {
     padding: 30px;
     color: rgb(217, 246, 246);
     text-align: center;
-    border-radius: 60px;
-    border: solid 2px #be5c5c;
+    border-radius: 20%;
+    border: solid 2px black;
     background-image: url(./assets/card_image.png);
+    opacity:0.92;
+    transition: 1s ease;
+    transition: 1s ease;
   }
 
+.card:hover {
+    border-color: lightyellow;
+    opacity:1;
+    transition: 1s ease;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    border-radius: 0%;
+  }
 
   /* nueva clase imagen */
   .imagen {
     width: 65%;
     height: 65%;
    
+  }
+
+  .imagen:hover {
+
   }
 
   .divInfo {
@@ -81,9 +111,7 @@ body {
     background-image: url(./assets/grass_background.png);
   }
 
-  .card:hover {
-    animation: bounce 0.5s linear;
-  }
+  
 
   .types-container {
     display: flex;
@@ -100,6 +128,7 @@ body {
 
     color: whitesmoke;
   }
+
 
   @keyframes bounce {
     20% {
