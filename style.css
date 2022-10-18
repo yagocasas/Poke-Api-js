@@ -26,10 +26,28 @@ justify-content: space-between;
 align-items: flex-end;
 }
 
+.search-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .search_input {
   border-radius: 10px;
-  width: 30vh;
+  width: 25vh;
   padding: 8px;
+  border: solid 2px gold;
+  background-color: black;
+  color: white;
+  font-size: medium;
+}
+
+.btn_info {
+border-radius: 10px;
+background-color: black;
+border: solid 2px gold;
+color: red;
+font-size: medium;
 
 }
 

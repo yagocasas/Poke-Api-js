@@ -92,6 +92,27 @@ const renderPokemons = (pokemons) => {
   pokemons.forEach((pokemon) => renderPokemonCard(pokemon));
 };
 
+// const input$$ = document.querySelector('input');
+// const button$$ = document.querySelector('button');
+// const result = document.querySelector('pokemon')
+
+// result.innerHTML= '';
+
+// const filtered = () => {
+//   // console.log(input$$.value);
+//   const text = input$$.value.toLowerCase();
+//   for (let pokemon of pokemons) {
+//     let name = poke.name.toLowerCase();
+//     if (name.indexOf(text) !== -1) {
+//       result.innerHTML += `${poke.name} -  `
+//     }
+
+    
+//   }
+// }
+
+// button$$.addEventListener('click', filtered);
+
 
 
 const init = async () => {
