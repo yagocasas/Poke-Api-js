@@ -35,7 +35,6 @@ align-items: flex-end;
 }
 
 .search-container p {
-  font-family: monospace;
   font-size: large;
   text-align: justify;
 }
@@ -67,14 +66,13 @@ font-size: medium;
   }
 
   .poke_img {
-    height: 100px;
-    width: 350px;
-   
+    height: 90px;
+    width: 100%; 
   }
  
   .card {
-    height: 260px;
-    width: 170px;
+    height: 250px;
+    width: 230px;
     list-style: none;
     padding: 5px 20px 30px ;
     color: rgb(217, 246, 246);
