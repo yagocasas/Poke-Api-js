@@ -36,10 +36,12 @@ const renderTypes = (types, container) => {
     typeContainer$$.style.backgroundColor = typeColors[type];
     typeContainer$$.classList.add("type");
     typeContainer$$.textContent = type;
-
+    typeContainer$$.addEventListener('click', () => {
+      input$$.setAttribute('value', type);
+      search(type);
+    });
     div$$.appendChild(typeContainer$$);
   });
-
   container.appendChild(div$$);
 };
 
@@ -50,7 +52,7 @@ const renderNoResults = () => {
 
   const p$$ = document.createElement("p");
   p$$.classList.add("card-title");
-  p$$.textContent = "No se encuentran resultados";
+  p$$.textContent = "Vaya!!! No tengo ningún pokemon con esas características.";
 
   li$$.appendChild(p$$);
   pokedex$$.appendChild(li$$);
@@ -64,9 +66,6 @@ const renderPokemonCard = (poke) => {
   img$$.src = poke.image;
   img$$.alt = poke.name;
   img$$.classList.add("imagen");
-
-  // const divInfo$$ = document.createElement("div");
-  // divInfo$$.classList.add("divInfo");
 
   const h5$$ = document.createElement("h5");
   h5$$.classList.add("card-title");
@@ -93,24 +92,24 @@ const renderPokemons = (pokemons) => {
 
 const input$$ = document.querySelector('input');
 const button$$ = document.querySelector('button');
-// const result = document.querySelector('pokemon')
 
-// result.innerHTML= '';
+const search = (value) => {
+  const filtered = ALL_POKEMONS_INFO.filter((pokemon) => {
+    const pokeName = pokemon.name.includes(value);
+    const pokeId = pokemon.id == value;
+    const pokeType = pokemon.types.includes(value);
 
-const filtered = () => {
-  console.log(input$$.value);
-  const text = input$$.value.toLowerCase();
-  for (let pokemon of pokemons) {
-    let name = poke.name.toLowerCase();
-    if (name.indexOf(text) !== -1) {
-      result.innerHTML += `${poke.name} -  `
-    }
+    return pokeName || pokeId || pokeType;
+  });
+  renderPokemons(filtered);
+};
 
-    
-  }
-}
+const addEventListeners = () => {
+  input$$.addEventListener ('input', (event) => {
+    search(event.target.value);
+  });
+};
 
-button$$.addEventListener('click', filtered);
 
 const searchContainer$$ = document.querySelector('.search-container');
 const info$$ = document.createElement('p');
@@ -120,8 +119,9 @@ searchContainer$$.appendChild(info$$);
 
 
 const init = async () => {
+  addEventListeners();
   const allPokemons = await getAllPokemons();
-
+  
   for (const pokemon of allPokemons) {
     const pokemonInfo = await getOnePokemon(pokemon.url);
     ALL_POKEMONS_INFO.push(pokemonInfo);

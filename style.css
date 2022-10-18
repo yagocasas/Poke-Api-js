@@ -112,9 +112,11 @@ font-size: medium;
   .card-subtitle {
     font-size: x-large;
     font-weight: inherit;
-    color: rgb(178, 171, 171);
+    color: rgb(255, 255, 255);
     margin-top: 5px;
   }
+
+
 
   #pokedex {
     padding-inline-start: 0;
@@ -137,13 +139,11 @@ font-size: medium;
   }
 
   .type {
-    width: 70px;
+    width: fit-content;
     padding: 4px;
     border-radius: 10px;
     text-transform: capitalize;
     display: inline-block;
-
-    color: whitesmoke;
   }
 
 
