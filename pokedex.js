@@ -20,7 +20,6 @@ const getOnePokemon = async (url) => {
       types: result.types.map((element) => element.type.name),
       image: result.sprites.other.dream_world.front_default,
     };
-
     return pokemon;
   } catch (error) {
     console.log("Error obteniendo cada pokemon " + url, error);
@@ -92,27 +91,32 @@ const renderPokemons = (pokemons) => {
   pokemons.forEach((pokemon) => renderPokemonCard(pokemon));
 };
 
-// const input$$ = document.querySelector('input');
-// const button$$ = document.querySelector('button');
+const input$$ = document.querySelector('input');
+const button$$ = document.querySelector('button');
 // const result = document.querySelector('pokemon')
 
 // result.innerHTML= '';
 
-// const filtered = () => {
-//   // console.log(input$$.value);
-//   const text = input$$.value.toLowerCase();
-//   for (let pokemon of pokemons) {
-//     let name = poke.name.toLowerCase();
-//     if (name.indexOf(text) !== -1) {
-//       result.innerHTML += `${poke.name} -  `
-//     }
+const filtered = () => {
+  console.log(input$$.value);
+  const text = input$$.value.toLowerCase();
+  for (let pokemon of pokemons) {
+    let name = poke.name.toLowerCase();
+    if (name.indexOf(text) !== -1) {
+      result.innerHTML += `${poke.name} -  `
+    }
 
     
-//   }
-// }
+  }
+}
 
-// button$$.addEventListener('click', filtered);
+button$$.addEventListener('click', filtered);
 
+const searchContainer$$ = document.querySelector('.search-container');
+const info$$ = document.createElement('p');
+info$$.textContent = 'Introduce el nombre, el tipo o la id del pokemon que quieres encontrar y descubre si lo hemos capturado.'
+
+searchContainer$$.appendChild(info$$);
 
 
 const init = async () => {
