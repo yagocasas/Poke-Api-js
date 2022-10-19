@@ -110,13 +110,11 @@ const addEventListeners = () => {
   });
 };
 
-
 const searchContainer$$ = document.querySelector('.search-container');
 const info$$ = document.createElement('p');
 info$$.textContent = 'Introduce el nombre, el tipo o la id del pokemon que quieres encontrar y descubre si lo hemos capturado.'
 
 searchContainer$$.appendChild(info$$);
-
 
 const init = async () => {
   addEventListeners();
